@@ -35,7 +35,7 @@ class SmplHomeCBV(View):
 						request, 
 						messages.SUCCESS, 						
 						'<a href="%s">%s/%s</a>' % (obj.get_short_url(), get_current_site(request), obj.shortcode),   
-						# '<a href="%s/%s">%s/%s</a>' % (get_current_site(request), obj.shortcode, get_current_site(request), obj.shortcode),
+						# '<a href="%s/%s" target="_blank">%s/%s</a>' % (get_current_site(request), obj.shortcode, get_current_site(request), obj.shortcode),
 						extra_tags='label label-success'
 						)
 				else:
@@ -48,8 +48,8 @@ class SmplHomeCBV(View):
 						request, 
 						messages.INFO, 						
 						'<a href="%s">%s/%s</a>' % (obj.get_short_url(), get_current_site(request), obj.shortcode), 
-						# '<a href="%s">%s/%s</a><span class="badge">Visited : %i</span>' % (obj.get_short_url(), get_current_site(request), obj.shortcode, int(analytic_obj.count)),
-						# '<a href="%s/%s">%s/%s</a>' % (get_current_site(request), obj.shortcode, get_current_site(request), obj.shortcode),
+						# '<a href="%s" target="_blank">%s/%s</a><span class="badge">Visited : %i</span>' % (obj.get_short_url(), get_current_site(request), obj.shortcode, int(analytic_obj.count)),
+						# '<a href="%s/%s" target="_blank">%s/%s</a>' % (get_current_site(request), obj.shortcode, get_current_site(request), obj.shortcode),
 						extra_tags='label label-default text-center'
 						)
 				# return HttpResponseRedirect(reverse('shortener:home'))
@@ -86,7 +86,7 @@ class SmplMultiCBV(View):
 							messages.SUCCESS, 
 							# '%s/%s' % (get_current_site(request), obj.shortcode),
 							'<a href="%s">%s/%s</a>' % (obj.get_short_url(), get_current_site(request), obj.shortcode),
-							# '<a href="%s/%s">%s/%s</a>' % (get_current_site(request), obj.shortcode, get_current_site(request), obj.shortcode),
+							# '<a href="%s/%s" target="_blank">%s/%s</a>' % (get_current_site(request), obj.shortcode, get_current_site(request), obj.shortcode),
 							extra_tags='label label-success'
 							)
 					else:
@@ -99,8 +99,8 @@ class SmplMultiCBV(View):
 							request, 
 							messages.INFO, 	
 							'<a href="%s">%s/%s</a>' % (obj.get_short_url(), get_current_site(request), obj.shortcode), 
-							# '<a href="%s">%s/%s</a><span class="badge">Vistied : %i</span>' % (obj.get_short_url(), get_current_site(request), obj.shortcode, int(analytic_obj.count)),
-							# '<a href="%s/%s">%s/%s</a>' % (get_current_site(request), obj.shortcode, get_current_site(request), obj.shortcode),
+							# '<a href="%s" target="_blank">%s/%s</a><span class="badge">Vistied : %i</span>' % (obj.get_short_url(), get_current_site(request), obj.shortcode, int(analytic_obj.count)),
+							# '<a href="%s/%s" target="_blank">%s/%s</a>' % (get_current_site(request), obj.shortcode, get_current_site(request), obj.shortcode),
 							extra_tags='label label-default text-center'
 							)					
 				# return HttpResponseRedirect(reverse('shortener:multi'))
