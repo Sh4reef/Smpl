@@ -19,7 +19,7 @@ def create_shortcode(instance, size=6):
 
 class Smpl(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
-	url = models.CharField(max_length=120)
+	url = models.CharField(max_length=3000)
 	shortcode = models.CharField(max_length=6, unique=True, blank=True)
 	timestamp = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
