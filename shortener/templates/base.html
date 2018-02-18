@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include 'head.html' %}
+  <body>
+
+  	{% include 'navbar.html' %}
+
+  {% block content %}{% endblock content %}
+
+  {% include 'javascripts.html' %}
+  {% block jquery %}{% endblock jquery %}
+  </body>
+</html>

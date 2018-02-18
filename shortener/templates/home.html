@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block jquery %}
+
+<script type="text/javascript">
+$(document).ready(function(){
+	console.log('JQuery loaded!')
+})
+</script>
+
+{% endblock jquery %}
+
+{% block content %}
+
+
+<style media="screen">
+	.hide-form {
+		display: none;
+	}
+</style>
+
+	<div class='container url-form'>
+		<div class='row'>
+			<div class='col-md-4 col-md-offset-4 text-center'>
+
+
+
+		  		{% if urlform.url.errors %}
+				    <ul class='list-group text-left'>
+				    {% for error in urlform.url.errors %}
+				        <h4><span class="label label-danger">{{error|escape}}</span></h4>
+				    {% endfor %}
+				    </ul>
+				{% endif %}
+
+				<!-- <div class='hide-form'> -->
+				<form method='POST' class="input-group">
+					{% csrf_token %}
+				    {{urlform.url}}
+				  <span class='input-group-btn'>
+				  	<button  class='btn btn-success' for='id_url' name='id_url' type='submit'>Shorten</button>
+				  </span>
+				</form>
+				<!-- </div> -->
+
+
+				{% if messages %}
+				<!-- <ul class="messages text-left"> -->
+				    {% for message in messages %}
+				    <h4 class='text-left'><span{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message|safe }}</span><h4>
+				    {% endfor %}
+				<!-- </ul> -->
+				{% endif %}
+
+
+
+			</div>
+			<!-- <div class="col-md-4 col-md-offset-4 text-center">
+					<a class='btn btn-warning' id='shorten-new-link' href='#'>Shorten new link</a>
+			</div> -->
+		</div>
+	</div>
+
+{% endblock content %}
