@@ -25,7 +25,7 @@ SECRET_KEY = 'wiilsncqp9#9rb#(vsv&ayo^c^1n$y^#ivxm15b($yj_vz!2)!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['smpl.ddns.net']
+ALLOWED_HOSTS = ['smplurl.herokuapp.com']
 
 
 # Application definition
